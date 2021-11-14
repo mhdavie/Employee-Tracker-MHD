@@ -15,7 +15,9 @@ const connection = mysql2.createConnection({
   password: process.env.DB_PASS
 });
 
-//connection.connect(function (err) {
+
+//connection 
+connection.connect(function (err) {
     if (err) throw err;
     employeeTracker();
 });
@@ -55,7 +57,7 @@ function DepartmentName() {
 
 function addNewDepartment(askDeptName) {
     console.log(askDeptName);
-    connection.query("INSERT INTO department (name) VALUE ('" + askDeptName + "')", function (err, result) {
+    connection.query("INSERT INTO department (department_name) VALUE ('" + askDeptName + "')", function (err, result) {
         if (err) throw err;
         console.log("New department created!");
         employeeTracker();        
@@ -87,7 +89,7 @@ const newRole = [
 // create a new role function
 
 function addNewRole(newRoleInfo) {
-    connection.query("INSERT INTO roles (title, salary, department_id) VALUE ('" + newRoleInfo.newRoleTitle + "', '" + newRoleInfo.newRoleSalary + "', '" + newRoleInfo.newDeptId + "')", function (err, result) {
+    connection.query("INSERT INTO roles (role_title, role_salary, department_id) VALUE ('" + newRoleInfo.newRoleTitle + "', '" + newRoleInfo.newRoleSalary + "', '" + newRoleInfo.newDeptId + "')", function (err, result) {
         if (err) throw err;
         console.log("New role created!");
         employeeTracker();
@@ -123,9 +125,41 @@ const newEmployee = [
 // create a new employee function
 
 function addNewEmployee(newEmpInfo) {
-    connection.query("INSERT INTO employees (firstName, lastName, role_id, manager_id) VALUE ('" + newEmpInfo.newEmpFirstName + "', '" + newEmpInfo.newEmpLastName + "', '" + newEmpInfo.empRoleId + "', '" + newEmpInfo.managerId + "')", function (err, result) {
+    connection.query("INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUE ('" + newEmpInfo.newEmpFirstName + "', '" + newEmpInfo.newEmpLastName + "', '" + newEmpInfo.empRoleId + "', '" + newEmpInfo.managerId + "')", function (err, result) {
         if (err) throw err;
         console.log("New employee created!");
+        employeeTracker();
+    });
+};
+
+
+// display department table
+
+function displayDepts() {
+    connection.query("SELECT * FROM department", function (err, result) {
+        if (err) throw err;
+        console.table(result);
+        employeeTracker();
+    });
+};
+
+//display roles table
+
+function displayRoles(){
+    connection.query("SELECT * FROM roles", function (err, result){
+        if (err) throw err;
+        console.table(result);
+        employeeTracker();
+    });
+};
+
+
+//display employees table
+
+function displayEmployees() {
+    connection.query("SELECT * FROM employees", function(err, result){
+        if (err) throw err;
+        console.table(result);
         employeeTracker();
     });
 };
