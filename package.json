@@ -1,0 +1,27 @@
+{
+  "name": "employee-tracker-mhd",
+  "version": "1.0.0",
+  "description": "command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.",
+  "main": "server.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhdavie/Employee-Tracker-MHD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhdavie/Employee-Tracker-MHD/issues"
+  },
+  "homepage": "https://github.com/mhdavie/Employee-Tracker-MHD#readme"
+}
