@@ -1,28 +1,36 @@
-INSERT INTO department (department_name)
-VALUES (Department of Magical Law Enforcement),
-       (Department of Magical Games Sports),
-       (Department of International Magical Cooperation),
-       (Department of Magical Accidents Catastrophes);
+use company_db;
 
-INSERT INTO roles (role_title, role_salary, department_id)
-VALUES (Manager, 5000.00, 1),
-       (Auror, 4000.00, 2),
-       (Quidditch Captain, 2000.00, 3),
-       (Hogwarts caretaker, 1500.00, 4),
-       (Professor of Defence Against the Dark Arts, 6000.00, 5),
-       (Professor of Herbology, 6000.00, 6);
+INSERT INTO department
+    (name)
+VALUES
+    ('Griffindor'),
+    ('Hufflepuff'),
+    ('Ravenclaw'),
+    ('Slytherin');
 
-INSERT INTO employees (first_Name, last_Name, role_id, manager_id)
-VALUES ('Harry', 'Potter', 1, 2),       
-       ('Ron', ' Weasley', 3, 4),
-       ('Hermione', 'Granger', 5, 6),
-       ('Rubeus', 'Hagrid', 6, 7),
-       ('Draco' 'Malfoy', 8, 9),
-       ('Gina', 'Weasley', 10, 11)
-       ('Cedrico', 'Gregory', 12, 13)
+INSERT INTO role
+    (title, salary, department_id)
+VALUES
+    ('Caretaker', 500000, 1),
+    ('Professor', 90000, 1),
+    ('Student', 190000, 2),
+    ('Software Engineer', 170000, 2),
+    ('Auror', 170000, 3),
+    ('Quidditch Captain', 300000, 3),
+    ('Dementador', 290000, 4),
+    ('Magic Minister', 490000, 4);
 
-
-
+INSERT INTO employee
+    (first_name, last_name, role_id, manager_id)
+VALUES
+    ('Harry', 'Potter', 1, NULL),
+    ('Ron', 'Weasley', 2, 1),
+    ('Hermione', 'Granger', 3, NULL),
+    ('Rubeous', 'Hagrid', 4, 3),
+    ('Draco', 'Malfoy', 5, NULL),
+    ('Gina', 'Weasley', 6, 5),
+    ('Cedrico', 'Gregory', 7, NULL),
+    ('Luna', 'Lovegood', 8, 7);
 
 
 
