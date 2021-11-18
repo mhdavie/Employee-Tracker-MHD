@@ -3,7 +3,7 @@
 
 ## Description 
 
-Node.js command line based employee management system with basic commands to add and manage  Departments, Roles and Employees.
+Node.js command line based employee management system with basic commands to add, display and manage Departments, Roles and Employees.
 
 
 
@@ -35,14 +35,14 @@ Node.js command line based employee management system with basic commands to add
 
 ## Walkthrough Video
 
-* [Employee Tracker Video]()
+* [Employee Tracker Video](https://watch.screencastify.com/v/eOCOww3NtXBGfZ6ZRR7t)
 
 ## Application 
 
-![](assets/)
+![](assets/emp.gif)
 
 ## Screenshots
 
-![](assets/)
+![](assets/seconf.png)
 
-![](assets/)
+![](assets/screenshot.png)
